@@ -1,0 +1,8 @@
+classe Medico:
+    atributos:
+        id: inteiro
+        nome: texto
+        especialidade: texto
+        crm: texto
+    métodos:
+        validarDisponibilidade(dataHora)

@@ -1,0 +1,6 @@
+classe ConsultaRepository:
+    métodos:
+        salvar(consulta)
+        buscarPorId(id)
+        listarPorPaciente(pacienteId)
+        atualizarStatus(id, novoStatus)

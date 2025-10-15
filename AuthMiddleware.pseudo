@@ -1,0 +1,6 @@
+classe AuthMiddleware:
+    método verificarToken(request):
+        token = request.headers["Authorization"]
+        se token inválido ou expirado:
+            retornar Erro("Acesso negado")
+        prosseguir para rota

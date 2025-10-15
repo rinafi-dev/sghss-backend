@@ -1,0 +1,12 @@
+classe Paciente:
+    atributos:
+        id: inteiro
+        nome: texto
+        cpf: texto
+        dataNascimento: data
+        telefone: texto
+        email: texto
+        senhaCriptografada: texto
+    métodos:
+        validarDados()
+        criptografarSenha()

@@ -1,0 +1,14 @@
+classe ConsultaService:
+    dependências: ConsultaRepository, Medico, Paciente
+    métodos:
+        agendarConsulta(pacienteId, medicoId, dataHora):
+            se médico não disponível:
+                lançar Erro("Horário indisponível")
+            novaConsulta = nova Consulta(pacienteId, medicoId, dataHora)
+            ConsultaRepository.salvar(novaConsulta)
+
+        cancelarConsulta(id):
+            consulta = ConsultaRepository.buscarPorId(id)
+            se consulta inexistente:
+                lançar Erro("Consulta não encontrada")
+            ConsultaRepository.atualizarStatus(id, "cancelada")

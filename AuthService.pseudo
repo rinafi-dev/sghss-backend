@@ -1,0 +1,19 @@
+classe AuthService:
+    dependências: PacienteRepository, JwtService, CriptografiaService
+    métodos:
+        signup(nome, cpf, email, senha):
+            se cpf já cadastrado:
+                retornar Erro("Usuário já existe")
+            hashSenha = CriptografiaService.gerarHash(senha)
+            novoPaciente = novo Paciente(nome, cpf, email, hashSenha)
+            PacienteRepository.salvar(novoPaciente)
+            retornar "Cadastro realizado com sucesso"
+
+        login(email, senha):
+            paciente = PacienteRepository.buscarPorEmail(email)
+            se paciente inexistente:
+                retornar Erro("Usuário não encontrado")
+            se !CriptografiaService.verificarHash(senha, paciente.senhaCriptografada):
+                retornar Erro("Senha incorreta")
+            token = JwtService.gerarToken(paciente.id)
+            retornar token

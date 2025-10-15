@@ -1,0 +1,8 @@
+rota POST /api/consultas:
+    entrada: JSON {pacienteId, medicoId, dataHora}
+    ação: ConsultaService.agendarConsulta(...)
+    saída: {"mensagem": "Consulta agendada com sucesso"}
+
+rota PUT /api/consultas/{id}/cancelar:
+    ação: ConsultaService.cancelarConsulta(id)
+    saída: {"mensagem": "Consulta cancelada com sucesso"}

@@ -1,0 +1,8 @@
+rota POST /api/pacientes:
+    entrada: JSON {nome, cpf, email, senha}
+    ação: PacienteService.cadastrarPaciente(dados)
+    saída: {"mensagem": "Paciente cadastrado com sucesso"}
+
+rota GET /api/pacientes:
+    ação: PacienteService.listarPacientes()
+    saída: lista de pacientes

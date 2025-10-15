@@ -1,0 +1,9 @@
+rota POST /api/auth/signup:
+    entrada: JSON {nome, cpf, email, senha}
+    ação: AuthService.signup(...)
+    saída: {"mensagem": "Cadastro realizado com sucesso"}
+
+rota POST /api/auth/login:
+    entrada: JSON {email, senha}
+    ação: AuthService.login(...)
+    saída: {"token": token, "mensagem": "Login realizado com sucesso"}

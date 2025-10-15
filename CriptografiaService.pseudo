@@ -1,0 +1,6 @@
+classe CriptografiaService:
+    métodos:
+        gerarHash(senha):
+            retornar bcrypt.hash(senha)
+        verificarHash(senha, hash):
+            retornar bcrypt.compare(senha, hash)

@@ -1,0 +1,6 @@
+classe JwtService:
+    métodos:
+        gerarToken(usuarioId):
+            retornar jwt.sign({"id": usuarioId}, CHAVE_SECRETA, expiraEm=1h)
+        verificarToken(token):
+            retornar jwt.verify(token, CHAVE_SECRETA)

@@ -1,0 +1,6 @@
+classe PacienteRepository:
+    métodos:
+        salvar(paciente)
+        buscarPorId(id)
+        listarTodos()
+        deletar(id)

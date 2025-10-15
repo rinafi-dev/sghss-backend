@@ -1,0 +1,12 @@
+classe PacienteService:
+    dependência: PacienteRepository
+    métodos:
+        cadastrarPaciente(dados):
+            se cpf já existir:
+                lançar Erro("CPF já cadastrado")
+            paciente = novo Paciente(dados)
+            paciente.criptografarSenha()
+            PacienteRepository.salvar(paciente)
+
+        listarPacientes():
+            retornar PacienteRepository.listarTodos()
